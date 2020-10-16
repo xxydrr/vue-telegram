@@ -26,7 +26,7 @@ store.watch(
 store.watch(
   (state) => state.chat.selectId,
   (val) => {
-    localStorage.setItem('tg-selectId', JSON.stringify(val))  
+    localStorage.setItem('tg-selectId', JSON.stringify(val))
   }
 )
 export default store

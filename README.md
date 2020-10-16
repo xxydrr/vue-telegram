@@ -75,6 +75,3 @@ node prod.server.js
 
 ![](https://cdn.jsdelivr.net/gh/xxydrr/my_pic/img/20200902110753.png)![](https://cdn.jsdelivr.net/gh/xxydrr/my_pic/img/20200902113330.png)
 
-# License
-
-[GPL](https://github.com/bailicangdu/vue2-elm/blob/master/COPYING)

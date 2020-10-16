@@ -16,7 +16,8 @@
       >
         <div class="chat-user"><img :src="item.self ? getUserInfo.img : selectedChat.user.img"></div>
         <p class="chat-text clearfix">{{item.content}}
-          <span class="hide">0:00</span><span class="time">{{item.date | formatTime}}</span></p>
+          <span class="hide">0:00</span><span class="time">{{item.date | formatTime}}</span>
+        </p>
       </li>
     </ul>
     <ul
@@ -32,7 +33,8 @@
       >
         <div class="chat-user"><img :src="item.self ? getUserInfo.img : item.user.img"></div>
         <p class="chat-text clearfix">{{item.content}}
-          <span class="hide">0:00</span><span class="time">{{item.date | formatTime}}</span></p>
+          <span class="hide">0:00</span><span class="time">{{item.date | formatTime}}</span>
+        </p>
       </li>
     </ul>
     <ul
@@ -47,7 +49,8 @@
       >
         <div class="chat-user"><img :src="selectedChat.user.img"></div>
         <p class="chat-text clearfix">{{item.content}}
-          <span class="hide">0:00</span><span class="time">{{item.date | formatTime}}</span></p>
+          <span class="hide">0:00</span><span class="time">{{item.date | formatTime}}</span>
+        </p>
       </li>
     </ul>
     <div
@@ -85,7 +88,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['selectedChat', 'messages', 'getCurrentUnreadMesCount', 'getUserInfo'])
+    ...mapGetters([
+      'selectedChat',
+      'messages',
+      'getCurrentUnreadMesCount',
+      'getUserInfo'
+    ])
   },
   watch: {
     messages() {
@@ -130,25 +138,29 @@ export default {
       // 监听滚动结束的时候的高度从而决定scrollFlag的显示， Y相当于this.$refs.messageList.scrollTop+ this.$refs.messageList.clientHeight
       // 由于使用了better scroll， overflow是hidden。this.$refs.messageList.scrollTop失效为0，所以使用better scroll的scrollEnd事件获得滚动出去的高度
       this.messageList.on('scroll', (pos) => {
-        // const clientHeight = this.$refs.messageList.clientHeight
-        const Y =
-          Math.abs(Math.round(pos.y)) + this.$refs.messageList.clientHeight
-        // const indexList = []
-        if (this.$refs.messageList.scrollHeight > Y) {
-          this.scrollFlag = true
-        } else {
-          this.scrollFlag = false
-        }
-        if (Y > this.currentHeight) {
-          this.currentHeight = Y
-        }
-        this.listHeight.forEach((item, index) => {
-          if (this.currentHeight > item) {
-            // indexList.push(index)
-            this.$store.dispatch('changeReadStatus', index)
-            this.$store.dispatch('updateUnreadCount')
+        try {
+          // const clientHeight = this.$refs.messageList.clientHeight
+          const Y =
+            Math.abs(Math.round(pos.y)) + this.$refs.messageList.clientHeight
+          // const indexList = []
+          if (this.$refs.messageList.scrollHeight > Y) {
+            this.scrollFlag = true
+          } else {
+            this.scrollFlag = false
           }
-        })
+          if (Y > this.currentHeight) {
+            this.currentHeight = Y
+          }
+          this.listHeight.forEach((item, index) => {
+            if (this.currentHeight > item) {
+              // indexList.push(index)
+              this.$store.dispatch('changeReadStatus', index)
+              this.$store.dispatch('updateUnreadCount')
+            }
+          })
+        } catch (error) {
+          console.log(error)
+        }
       })
     },
     // 计算每条回复的文本高度并且存到数组中同时滚动到对应的消息位置

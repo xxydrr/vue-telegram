@@ -10,12 +10,10 @@ import '../public/mui/css/mui.min.css'
 // 导入mint-ui样式
 import 'mint-ui/lib/style.css'
 // import '../public/scss/base.scss'
-
 // 引入自定义样式
 import './assets/scss/base.scss'
 // 字体样式
 import './assets/iconFonts/icon.css'
-
 // import '../public/scss/header-search.scss'
 import Mint from 'mint-ui'
 // 引入animate.css
