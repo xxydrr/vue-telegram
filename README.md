@@ -1,6 +1,6 @@
 # 前言
 
-vue2仿telegram这个项目我把自己所学的vue大部分知识都用上了，可以说覆盖了vue的大部分知识，通过这项目对vue有了更加深刻的了解以及更灵活的应用。该项目的升级版本由vue+koa2+mongodb搭建的前后端聊天系统已完成。[地址](https://github.com/xxydrr/vue-koa-vue/tree/main)
+vue2仿telegram这个项目我把自己所学的vue大部分知识都用上了，可以说覆盖了vue的大部分知识，通过这项目对vue有了更加深刻的了解以及更灵活的应用。该项目的升级版本由vue+koa2+mongodb搭建的前后端分离聊天系统已完成。[地址](https://github.com/xxydrr/vue-koa-vue/tree/main)
 
 ## 技术栈
 
