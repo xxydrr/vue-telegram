@@ -1,6 +1,6 @@
 # 前言
 
-vue2仿telegram这个项目我把自己所学的vue大部分知识都用上了，可以说覆盖了vue的大部分知识，通过这项目对vue有了更加深刻的了解以及更灵活的应用。该项目构建时间是2020-07-23开始telegram最新版更新了部分setting编辑个人信息样式时间有限我就不改过来了。由于最近比较忙，后期将加入axios+mock或者axios+后台以及完善该项目。敬请期待！！！
+vue2仿telegram这个项目我把自己所学的vue大部分知识都用上了，可以说覆盖了vue的大部分知识，通过这项目对vue有了更加深刻的了解以及更灵活的应用。该项目的升级版本由vue+koa2+mongodb搭建的前后端聊天系统已完成。[地址](https://github.com/xxydrr/vue-koa-vue/tree/main)
 
 ## 技术栈
 
